@@ -2,7 +2,10 @@ import puppeteer from 'puppeteer';
 
 // Scrape all reviews of a professor and store it as a Review object in future implementation.
 export default async function scraper(url) {
-  const browser = await puppeteer.launch();
+  const browser = await puppeteer.launch({
+        headless: true,
+        args: ["--no-sandbox"],
+      });
   const page = await browser.newPage();
   
   await page.goto(url);
