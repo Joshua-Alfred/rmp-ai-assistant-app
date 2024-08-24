@@ -6,6 +6,7 @@ import {
   Button,
   Stack,
   Box,
+  CardMedia,
   Paper,
   Skeleton,
   Card,
@@ -55,10 +56,30 @@ const LandingPage = () => {
               Discover Now
             </Button>
           </Link>
-          <Skeleton
-            variant="rounded"
-            sx={{ width: "100%", height: "400px", borderRadius: 10 }}
-          />
+          <Box
+          sx={{
+            width: "100%",
+            height: "400px",
+            borderRadius: 2,
+            overflow: "hidden",
+            position: "relative",
+            backgroundColor: "black",
+            border: "solid 1px black",
+          }}
+        >
+          <CardMedia
+            component="video"
+            image="/assets/rmp-demo-video.mp4"
+            autoPlay
+            loop
+            muted
+            sx={{
+              width: "100%",
+              height: "100%",
+              objectFit: "cover",
+            }}
+        />
+      </Box>
         </Stack>
         <ProductSection />
         <Testimonials />
